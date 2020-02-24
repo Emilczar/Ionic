@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Sections, SectionsRoom } from 'src/models/backend/sections';
+import { Devices } from 'src/models/backend/devices';
 
 
 @Injectable({
@@ -21,13 +22,16 @@ export class BackendService {
 
   getSections(): Observable<Sections[]> {
     let url = environment.baseUrl + WebServiceName.sections
-    return this.httpClient.get<Sections[]>(url)
+    return this.httpClient.get<Sections[]>(url);
  }
  
  getRooms(): Observable<SectionsRoom[]> {
   let url = environment.baseUrl + WebServiceName.rooms
-  return this.httpClient.get<SectionsRoom[]>(url)
+  return this.httpClient.get<SectionsRoom[]>(url);
 }
 
-
+getDevices(): Observable<Devices[]> {
+  let url = environment.baseUrl + WebServiceName.devices
+  return this.httpClient.get<Devices[]>(url);
+}
 }
