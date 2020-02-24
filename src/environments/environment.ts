@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: "https://fibaro.free.beeceptor.com"
+  baseUrl: "http://0.0.0.0:3000"
 };
 
 /*

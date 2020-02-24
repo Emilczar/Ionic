@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { forkJoin } from 'rxjs';
 import { BackendService } from '../backend/backend.service';
+import { AdapterService } from '../adapter/adapter.services';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InitService {
 
-  constructor(private backend: BackendService) { }
+  constructor(private backend: BackendService, private adapter: AdapterService) { }
 
 
   init() {
@@ -16,7 +17,7 @@ export class InitService {
          this.backend.getSections(),
          this.backend.getRooms(),
      ).subscribe(([info, sections, rooms]) => {
-        console.log(info)
+        this.adapter.setInfo(info)
         console.log(sections)
         console.log(rooms)
      })
