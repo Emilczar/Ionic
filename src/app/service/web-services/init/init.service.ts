@@ -18,7 +18,7 @@ export class InitService {
          this.backend.getRooms(),
      ).subscribe(([info, sections, rooms]) => {
         this.adapter.setInfo(info)
-        console.log(sections)
+        this.adapter.setSection(sections)
         console.log(rooms)
      })
   }

@@ -19,9 +19,9 @@ export class BackendService {
     return this.httpClient.get<Info>(url);
   }
 
-  getSections(): Observable<Sections> {
+  getSections(): Observable<Sections[]> {
     let url = environment.baseUrl + WebServiceName.sections
-    return this.httpClient.get<Sections>(url)
+    return this.httpClient.get<Sections[]>(url)
  }
  
  getRooms(): Observable<SectionsRomm> {
