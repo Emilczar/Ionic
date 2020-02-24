@@ -4,7 +4,7 @@ import { Info } from '../../../../models/backend/info';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Sections, SectionsRomm } from 'src/models/backend/sections';
+import { Sections, SectionsRoom } from 'src/models/backend/sections';
 
 
 @Injectable({
@@ -24,9 +24,9 @@ export class BackendService {
     return this.httpClient.get<Sections[]>(url)
  }
  
- getRooms(): Observable<SectionsRomm> {
-  let url = environment.baseUrl + WebServiceName.sections
-  return this.httpClient.get<SectionsRomm>(url)
+ getRooms(): Observable<SectionsRoom[]> {
+  let url = environment.baseUrl + WebServiceName.rooms
+  return this.httpClient.get<SectionsRoom[]>(url)
 }
 
 

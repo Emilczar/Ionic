@@ -6,6 +6,6 @@ export class Sections {
     sortOrder: number;
 }
 
-export class SectionsRomm extends Sections {
+export class SectionsRoom extends Sections {
     sectionID:  number;
 }
